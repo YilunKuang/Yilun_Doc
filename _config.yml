@@ -2,7 +2,8 @@ title: Just the Docs Template
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
-url: https://yilunkuang_doc.github.io
+url: https://yilunkuang.github.io/Yilun_Doc
 
-aux_links:
-  Template Repository: https://github.com/YilunKuang/yilunkuang_doc.github.io
+aux_links: 
+  Template Repository: https://github.com/YilunKuang/Yilun_Doc
+

@@ -5,8 +5,6 @@ title: SDE
 
 parent: Diffusion Models
 ---
-
-
-**SDE**
+# SDE
 
 TODO

@@ -5,7 +5,7 @@ title: Score Matching
 
 parent: Diffusion Models
 ---
-**Score Matching**
+# Score Matching
 
 Consider the task of density estimation for a random vector $$\mathbf{x}\in\mathbb{R}^{n}$$ with a probability density function $$p_\mathbf{x}(\cdot)$$. Suppose we have a parametrized density model $$p(\boldsymbol{\xi};\boldsymbol{\theta})=\frac{1}{Z(\boldsymbol{\theta})}q(\boldsymbol{\xi};\boldsymbol{\theta})$$ with parameters $$\boldsymbol{\theta}\in\mathbb{R}^{m}$$ and an intractable normalization constant $$Z(\boldsymbol{\theta}):=\int_{\boldsymbol{\xi}\in\mathbb{R}^n}q(\boldsymbol{\xi};\boldsymbol{\theta})d\boldsymbol{\xi}$$. 
 

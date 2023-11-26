@@ -10,3 +10,4 @@ permalink: docs/Numerical Methods
 
 - [Seven Sins of Numerical Linear Algebra](https://nhigham.com/2022/10/11/seven-sins-of-numerical-linear-algebra/)
 - [Cornell CS 6210 Matrix Computations](https://www.cs.cornell.edu/courses/cs6210/2022fa/schedule.html)
+- [Matlab Linear System Solver Flow Chart](https://www.mathworks.com/help/matlab/ref/mldivide.html)

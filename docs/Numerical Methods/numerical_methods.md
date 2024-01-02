@@ -8,6 +8,8 @@ permalink: docs/Numerical Methods
 
 ## Resources
 
+---
+
 **Blogs**
 - [Seven Sins of Numerical Linear Algebra](https://nhigham.com/2022/10/11/seven-sins-of-numerical-linear-algebra/)
 - [Matlab Linear System Solver Flow Chart](https://www.mathworks.com/help/matlab/ref/mldivide.html)

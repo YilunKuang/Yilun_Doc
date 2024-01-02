@@ -14,7 +14,22 @@ permalink: docs/Diffusion Models
 - [Yang Song - Generative Modeling by Estimating Gradients of the Data Distribution](https://yang-song.net/blog/2021/score/)
 
 **Papers**
-- TODO
+- DDPM
+    - [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585)
+    - [Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239)
+- SMLD
+    - [Generative Modeling by Estimating Gradients of the Data Distribution](https://arxiv.org/abs/1907.05600)
+- Consistency Model
+    - [Consistency Models](https://arxiv.org/abs/2303.01469)
+- LDM
+    - [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752)
+- SDE
+    - [Score-Based Generative Modeling through Stochastic Differential Equations](https://arxiv.org/abs/2011.13456)
+- General
+    - [Denoising Diffusion Implicit Models](https://arxiv.org/abs/2010.02502)
+    - [Elucidating the Design Space of Diffusion-Based Generative Models](https://arxiv.org/abs/2206.00364)
+- Discrete Diffusion
+    - [Structured Denoising Diffusion Models in Discrete State-Spaces](https://arxiv.org/abs/2107.03006)
 
 <!-- - [Cornell CS 6210 Matrix Computations](https://www.cs.cornell.edu/courses/cs6210/2022fa/schedule.html)
 - [Harvard AM 205 Advanced Scientific Computing: Numerical Methods](https://people.math.wisc.edu/~chr/am205/index.html)

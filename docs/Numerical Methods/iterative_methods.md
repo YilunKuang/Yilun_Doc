@@ -38,7 +38,7 @@ $$
 \mathbf{x}_{k+1}&=(I-(D+L)^{-1}(D+L+U))\mathbf{x}_{k}+(D+L)^{-1}\mathbf{b} \\
 \mathbf{x}_{k+1}&=-(D+L)^{-1}U\mathbf{x}_{k}+(D+L)^{-1}\mathbf{b} \\
 \mathbf{x}_{k+1}&=(D+L)^{-1}(\mathbf{b}-U\mathbf{x}_{k}) \\
-\color{lightskyblue}{(D+L)}\color{yellowgreen}{\mathbf{x}_{k+1}}&=\color{purple}{(\mathbf{b}-U\mathbf{x}_{k})} \\
+\color{lightskyblue}{(D+L)}\color{yellowgreen}{\mathbf{x}_{k+1}}&=\color{fuchsia}{(\mathbf{b}-U\mathbf{x}_{k})} \\
 \end{align}
 $$
 
@@ -46,11 +46,11 @@ Notice that $$(D+L)$$ is an upper triangular matrix so we can use forward substi
 
 $$
 \begin{align}
-\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{purple}{\mathbf{b}[i]-\sum_{j=i+1}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
-\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{purple}{\mathbf{b}[i]-\big(\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]-A[i][i]\mathbf{x}_{k}[i]\big)}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
-\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{purple}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]+A[i][i]\mathbf{x}_{k}[i]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
-\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\frac{\color{purple}{A[i][i]\mathbf{x}_{k}[i]}}{\color{lightskyblue}{A[i][i]}}+\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{purple}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
-\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{purple}{\mathbf{x}_{k}[i]}+\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{purple}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
+\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{fuchsia}{\mathbf{b}[i]-\sum_{j=i+1}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
+\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{fuchsia}{\mathbf{b}[i]-\big(\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]-A[i][i]\mathbf{x}_{k}[i]\big)}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
+\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{fuchsia}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]+A[i][i]\mathbf{x}_{k}[i]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
+\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\frac{\color{fuchsia}{A[i][i]\mathbf{x}_{k}[i]}}{\color{lightskyblue}{A[i][i]}}+\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{fuchsia}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
+\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{fuchsia}{\mathbf{x}_{k}[i]}+\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{fuchsia}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
 \end{align}
 $$
 

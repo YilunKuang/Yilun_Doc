@@ -28,6 +28,10 @@ $$
 
 We can decompose the matrix $$A$$ into lower-triangular $$L$$, diagonal $$D$$, and upper-triangular $$U$$ components such that $$A=L+D+U$$. 
 
+## Jacobi
+
+TODO
+
 ## Gauss-Seidel
 
 If we pick $$Q=D+L$$, we have the Gauss-Seidel method that converges for any initial guess $$\mathbf{x}_{0}$$ if $$A$$ is symmetric positive definite: 
@@ -55,3 +59,10 @@ $$
 $$
 
 Thus we arrive at the Gauss-Seidel fixed-point iteration. Notice that this iteration only requires a single row from the matrix $$A$$ during the update for position $$i$$. This means when the matrix $$A$$ is large, we don't need to store the entire dense matrix $$A$$. Since each position $$i$$ can be computed independently, the Gauss-Seidel iteration can also be massively parallelized on modern GPUs for each position $$i$$. 
+
+**TODO:**
+- Jacobi methods
+- python implementation of gauss-seidel
+- python / CUDA implementataion of gauss-seidel for solving linear systems in parallel
+- find better colors
+

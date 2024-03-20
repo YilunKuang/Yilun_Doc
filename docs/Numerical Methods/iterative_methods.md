@@ -76,7 +76,8 @@ $$
 \end{align}
 $$
 
-where $$\mathbf{v}[i]$$ is the $$i$$-th entry of the vector $$\mathbf{v}\in\mathbb{R}^{n}$$. 
+where $$\mathbf{v}[i]$$ is the $$i$$-th entry of the vector $$\mathbf{v}\in\mathbb{R}^{n}$$. Notice that the Richardon method updates the solution in the direction of the residual $$\mathbf{r}_{k}:=\mathbf{b}-A\mathbf{x}_k=A(\mathbf{x}-\mathbf{x}_k)=A\mathbf{e}_k$$ where $$\mathbf{e}_k$$ is the error. 
+
 
 
 ### Jacobi
@@ -110,7 +111,7 @@ $$
 \mathbf{x}_{k+1}&=(I-(D+L)^{-1}(D+L+U))\mathbf{x}_{k}+(D+L)^{-1}\mathbf{b} \\
 \mathbf{x}_{k+1}&=-(D+L)^{-1}U\mathbf{x}_{k}+(D+L)^{-1}\mathbf{b} \\
 \mathbf{x}_{k+1}&=(D+L)^{-1}(\mathbf{b}-U\mathbf{x}_{k}) \\
-\color{lightskyblue}{(D+L)}\color{yellowgreen}{\mathbf{x}_{k+1}}&=\color{fuchsia}{(\mathbf{b}-U\mathbf{x}_{k})} \\
+\color{#4a90e2}{(D+L)}\color{#50b83c}{\mathbf{x}_{k+1}}&=\color{#9c6ade}{(\mathbf{b}-U\mathbf{x}_{k})} \\
 \end{align}
 $$
 
@@ -118,20 +119,26 @@ Notice that $$(D+L)$$ is an upper triangular matrix so we can use forward substi
 
 $$
 \begin{align}
-\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{fuchsia}{\mathbf{b}[i]-\sum_{j=i+1}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
-\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{fuchsia}{\mathbf{b}[i]-\big(\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]-A[i][i]\mathbf{x}_{k}[i]\big)}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
-\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{fuchsia}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]+A[i][i]\mathbf{x}_{k}[i]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
-\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\frac{\color{fuchsia}{A[i][i]\mathbf{x}_{k}[i]}}{\color{lightskyblue}{A[i][i]}}+\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{fuchsia}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
-\color{yellowgreen}{\mathbf{x}_{k+1}[i]}&=\color{fuchsia}{\mathbf{x}_{k}[i]}+\color{lightskyblue}{\frac{1}{A[i][i]}}\bigg(\color{fuchsia}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{lightskyblue}{\sum_{j=1}^{i-1}A[i][j]}\color{yellowgreen}{\mathbf{x}_{k+1}[j]}\bigg)\\
+\color{#50b83c}{\mathbf{x}_{k+1}[i]}&=\color{#4a90e2}{\frac{1}{A[i][i]}}\bigg(\color{#9c6ade}{\mathbf{b}[i]-\sum_{j=i+1}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{#4a90e2}{\sum_{j=1}^{i-1}A[i][j]}\color{#50b83c}{\mathbf{x}_{k+1}[j]}\bigg)\\
+\color{#50b83c}{\mathbf{x}_{k+1}[i]}&=\color{#4a90e2}{\frac{1}{A[i][i]}}\bigg(\color{#9c6ade}{\mathbf{b}[i]-\big(\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]-A[i][i]\mathbf{x}_{k}[i]\big)}-\color{#4a90e2}{\sum_{j=1}^{i-1}A[i][j]}\color{#50b83c}{\mathbf{x}_{k+1}[j]}\bigg)\\
+\color{#50b83c}{\mathbf{x}_{k+1}[i]}&=\color{#4a90e2}{\frac{1}{A[i][i]}}\bigg(\color{#9c6ade}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]+A[i][i]\mathbf{x}_{k}[i]}-\color{#4a90e2}{\sum_{j=1}^{i-1}A[i][j]}\color{#50b83c}{\mathbf{x}_{k+1}[j]}\bigg)\\
+\color{#50b83c}{\mathbf{x}_{k+1}[i]}&=\frac{\color{#9c6ade}{A[i][i]\mathbf{x}_{k}[i]}}{\color{#4a90e2}{A[i][i]}}+\color{#4a90e2}{\frac{1}{A[i][i]}}\bigg(\color{#9c6ade}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{#4a90e2}{\sum_{j=1}^{i-1}A[i][j]}\color{#50b83c}{\mathbf{x}_{k+1}[j]}\bigg)\\
+\color{#50b83c}{\mathbf{x}_{k+1}[i]}&=\color{#9c6ade}{\mathbf{x}_{k}[i]}+\color{#4a90e2}{\frac{1}{A[i][i]}}\bigg(\color{#9c6ade}{\mathbf{b}[i]-\sum_{j=i}^{n}A[i][j]\mathbf{x}_{k}[j]}-\color{#4a90e2}{\sum_{j=1}^{i-1}A[i][j]}\color{#50b83c}{\mathbf{x}_{k+1}[j]}\bigg)\\
 \end{align}
 $$
 
-Thus we arrive at the Gauss-Seidel fixed-point iteration. Notice that this iteration only requires a single row from the matrix $$A$$ during the update for position $$i$$. This means when the matrix $$A$$ is large, we don't need to store the entire dense matrix $$A$$. Since each position $$i$$ can be computed independently, the Gauss-Seidel iteration can also be massively parallelized on modern GPUs for each position $$i$$. 
+Thus we arrive at the Gauss-Seidel fixed-point iteration. Viewing from an algorithmic perspective, Gauss-Seidel improves over Jacobi by taking into account the already updated $$\mathbf{x}_{k+1}[j]$$ for $$j=1,\cdots,i-1$$ during the update of $$\mathbf{x}_{k+1}[i]$$.
+
+<div style="background-color: #f3f5f9; padding: 10px; border-radius: 5px;">
+
+<strong>Remark:</strong>
+Notice that all of the iterative methods above only require a single row from the matrix \(A\) during the update for position \(i\). This means when the matrix \(A\) is large, we don't need to store the entire dense matrix \(A\). Since each position \(i\) can be computed independently, iterative methods can also be massively parallelized on modern GPUs for each position \(i\).
+
+</div>
 
 **TODO:**
-- Jacobi methods
 - python implementation of gauss-seidel
 - python / CUDA implementataion of gauss-seidel for solving linear systems in parallel
-- find better colors
 
-Reference: 
+**Reference:**
+- [1] NYU Numerical Method I Lecture

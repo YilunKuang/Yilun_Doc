@@ -5,6 +5,7 @@ parent: Numerical Methods
 ---
 # Iterative Methods
 
+## Fixed-Point Iteration
 Suppose we want to solve a linear system $$A\mathbf{x}=\mathbf{b}$$ where $$A\in\mathbb{R}^{n\times n}$$. Let $$Q$$ be an invertible matrix such that
 
 $$
@@ -26,15 +27,82 @@ $$
 \end{align}
 $$
 
-We can decompose the matrix $$A$$ into lower-triangular $$L$$, diagonal $$D$$, and upper-triangular $$U$$ components such that $$A=L+D+U$$. 
+The convergence criteria of the sequence $$(\mathbf{x}_k)_{k\in\mathbb{N}\cup\{0\}}$$ is given by the following theorem: 
 
-## Jacobi
+<div style="background-color: #f0f0f0; padding: 10px; border-radius: 5px;">
 
-TODO
+<strong>Theorem:</strong> <em>The fixed-point method \( \mathbf{x}_{k+1}=G\mathbf{x}_{k}+\mathbf{c} \) with an invertible \( G \) converges for any initial point \( \mathbf{x}_{0} \) if and only if the spectral radius of \( G \) is smaller than \( 1 \):</em>
 
-## Gauss-Seidel
+\[ \rho(G)<1, \]
 
-If we pick $$Q=D+L$$, we have the Gauss-Seidel method that converges for any initial guess $$\mathbf{x}_{0}$$ if $$A$$ is symmetric positive definite: 
+<em>where \( \rho(G):=\max_{j}\lvert \lambda_{j}\rvert \) is the largest eigenvalue of \( G \) in absolute values.</em>
+
+</div>
+
+## Different Iterative Methods
+
+Different types of fixed point iteration correspond to difference choices of the matrix $$Q$$. In the following section we decompose the matrix $$A$$ into lower-triangular $$L$$, diagonal $$D$$, and upper-triangular $$U$$ components such that $$A=L+D+U$$. 
+
+
+### Dense Method
+In the extreme case if we simply choose $$Q=A$$, then the fixed-point iteration gives
+
+$$
+\begin{align}
+\mathbf{x}_{k+1}&=(I-A^{-1}A)\mathbf{x}_{k}+A^{-1}\mathbf{b} \\
+\iff\mathbf{x}_{k+1}&=\mathbf{0}+\mathbf{x} \\
+\iff\mathbf{x}_{k+1}&=\mathbf{x} \\
+\end{align}
+$$
+
+We arrive at the solution in one step. This is equivalent to dense methods such as LU factorizations or QR decompositions where we simply compute $$A^{-1}$$.
+
+### Richardson
+The other extreme case is choosing $$Q=I$$. Then we have the Richardson method:
+
+
+$$
+\begin{align}
+\mathbf{x}_{k+1}&=(I-A)\mathbf{x}_{k}+\mathbf{b} \\
+\end{align}
+$$
+
+Since we have invested zero costs in finding a proper preconditioner $$Q$$, we can only expect slow convergence or even divergence. Algorithmically, we can rewrite the update as:
+
+$$
+\begin{align}
+\mathbf{x}_{k+1}&=\mathbf{x}_{k}+(\mathbf{b}-A\mathbf{x}_{k}) \\
+\mathbf{x}_{k+1}[i]&=\mathbf{x}_{k}[i]+\bigg(\mathbf{b}[i]-\sum_{i=1}^{n}A[i][j]\mathbf{x}_{k}[j]\bigg) \\
+\end{align}
+$$
+
+where $$\mathbf{v}[i]$$ is the $$i$$-th entry of the vector $$\mathbf{v}\in\mathbb{R}^{n}$$. 
+
+
+### Jacobi
+
+If we pick $$Q=D$$, we have the Jacobi method that converges for any starting point $$\mathbf{x}_0$$ if $$A$$ is strictly diagonal dominant, i.e. $$\lvert A[i][i]\rvert>\sum_{j\neq i}\lvert A[i][j]\rvert$$ for $$i=1,\cdots,n$$:
+
+$$
+\begin{align}
+\mathbf{x}_{k+1}&=(I-D^{-1}A)\mathbf{x}_{k}+D^{-1}\mathbf{b} \\
+\end{align}
+$$
+
+We can obtain a component-wise update as follows:
+
+$$
+\begin{align}
+\mathbf{x}_{k+1}&=\mathbf{x}_{k}+D^{-1}(\mathbf{b}-A\mathbf{x}_{k}) \\
+\mathbf{x}_{k+1}[i]&=\mathbf{x}_{k}[i]+\frac{1}{A[i][i]}\bigg(\mathbf{b}[i]-\sum_{i=1}^{n}A[i][j]\mathbf{x}_{k}[j]\bigg) \\
+
+\end{align}
+$$
+
+
+### Gauss-Seidel
+
+If we pick $$Q=D+L$$, we have the Gauss-Seidel method that converges for any initial guess $$\mathbf{x}_{0}$$ if $$A$$ is symmetric positive definite (spd): 
 
 $$
 \begin{align}
@@ -66,3 +134,4 @@ Thus we arrive at the Gauss-Seidel fixed-point iteration. Notice that this itera
 - python / CUDA implementataion of gauss-seidel for solving linear systems in parallel
 - find better colors
 
+Reference: 

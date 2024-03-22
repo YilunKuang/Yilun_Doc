@@ -136,9 +136,13 @@ Notice that all of the iterative methods above only require a single row from th
 
 </div>
 
+
+
+
 **TODO:**
 - python implementation of gauss-seidel
 - python / CUDA implementataion of gauss-seidel for solving linear systems in parallel
+
 
 **Reference:**
 - [1] NYU Numerical Method I Lecture

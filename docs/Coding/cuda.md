@@ -59,5 +59,27 @@ parent: Coding
                 - `cudaMemPrefetchAsync(a, bytes, id); cudaMemPrefetchAsync(b, bytes, id);`
             - prefetch from device to host
                 - `cudaMemPrefetchAsync(c, bytes, cudaCpuDeviceId);`
-- [ ] 3 CUDA Crash Course: Matrix Multiplication
-    - TODO! 
+- [x] 3 CUDA Crash Course: Matrix Multiplication
+    - [reference code: matrix multiplication](https://github.com/CoffeeBeforeArch/cuda_programming/blob/master/02_matrix_mul/baseline/mmul.cu)
+        - Basic Flow
+            - For square matrices multiplications $$A\times B =C$$ with $$A,B,C\in\mathbb{R}^{n\times n}$$, we would like to assign one thread for $$C[i][j]\space\forall i,j$$. Each thread would write the results of $$A[i,:]^\top B[:,j]$$ into $$C[i][j]$$.
+        - 2D Indexing for Thread Blocks
+            - Row = blockIdx.y * blockDim.y + threadIdx.y
+            - Col = blockIdx.x * blockDim.x + threadIdx.x
+        - Coalescing
+            - 2D matrices are layered out as one array in memory. It's important to make sure that we're not bottlenecked by fragmented memory access.
+        - Code
+            - Matrix Size (1024 * 1024)
+                - `int n = 1 << 10;` 
+            - Threads Per Blocks (2D)
+                - `int BLOCK_SIZE = 16;`
+            - Blocks in Each Dimension
+                - `int GRID_SIZE = (int)ceil(n / BLOCK_SIZE);`
+            - dim3 objects
+                - `dim3 grid(GRID_SIZE, GRID_SIZE)`
+                - `dim3 threads(BLOCK_SIZE, BLOCK_SIZE)`
+                - This is 64*64*16*16 = 1024*1024 total number of threads
+            - within the CUDA Kernel for matrix multiplication
+                - `int row = blockIdx.y * blockDim.y + threadIdx.y;`
+                - `int col = blockIdx.x * blockDim.x + threadIdx.x;`
+                - basically, CUDA helps us reduce two for loop (loops over rows and columns) by parallelizing the computation of $$C[i][j]$$ across all threads. 

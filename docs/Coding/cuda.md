@@ -16,6 +16,7 @@ parent: Coding
     - [Assignment 4: NanoGPT149](https://github.com/stanford-cs149/cs149gpt/tree/main)
 - [Book: An Introduction to Parallel Programming](https://www.cs.usfca.edu/%7Epeter/ipp/)
 - [YouTube: CoffeeBeforeArch - CUDA Crash Course](https://www.youtube.com/playlist?list=PLxNPSjHT5qvtYRVdNN1yDcdSl39uHV_sU)
+- [GitHub: Andrej Karpathy - llm.c](https://github.com/karpathy/llm.c/tree/master)
 
 ## Learning
 

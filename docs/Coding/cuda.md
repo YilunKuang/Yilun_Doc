@@ -83,3 +83,7 @@ parent: Coding
                 - `int row = blockIdx.y * blockDim.y + threadIdx.y;`
                 - `int col = blockIdx.x * blockDim.x + threadIdx.x;`
                 - basically, CUDA helps us reduce two for loop (loops over rows and columns) by parallelizing the computation of $$C[i][j]$$ across all threads. 
+- [ ] 4 CUDA Crash Course: Cache Tiled Matrix Multiplication
+    - [refernce code: tiled matrix multiplication](https://github.com/CoffeeBeforeArch/cuda_programming/blob/master/02_matrix_mul/tiled/mmul.cu)
+    - TODO: Need to watch again and summarize here
+ 

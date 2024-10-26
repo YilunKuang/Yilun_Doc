@@ -7,9 +7,5 @@ parent: Coding
 ---
 # PyTorch
 
-```c++
-#include <torch/extension.h>
+- [PyTorch internals](http://blog.ezyang.com/2019/05/pytorch-internals/)
 
-
-
-```

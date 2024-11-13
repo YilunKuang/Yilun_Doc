@@ -55,5 +55,7 @@ Here is the expected entry size of $$Av$$ for different matrices $$A$$ and vecto
 2. Neural network output should be $$\mathcal{O}(1)$$;
 3. All parameters should be updated as much as possible (in terms of scaling in width) without leading to divergence
 
+## TODO: muP and SP for General Neural Networks
+
 **Reference**
 - Greg Yang, Edward J. Hu, Igor Babuschkin, Szymon Sidor, Xiaodong Liu, David Farhi, Nick Ryder, Jakub Pachocki, Weizhu Chen, Jianfeng Gao. Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer. https://arxiv.org/abs/2203.03466.

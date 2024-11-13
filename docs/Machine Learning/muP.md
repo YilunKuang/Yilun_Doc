@@ -42,10 +42,18 @@ $$
 \end{cases}
 $$
 
-## TODO: Gaussian Matrices and Tensor Products
+## Gaussian Matrices and Tensor Products
+
+Here is the expected entry size of $$Av$$ for different matrices $$A$$ and vector $$v$$ correlated with each other, both having entries of size $$\Theta(1)$$:
+
+|       | Standard Gaussian <br> $$A\in\mathbb{R}^{n\times n}$$ | (Nonlinear) Tensor Product <br> $$A\in\mathbb{R}^{n\times n}$$ | Vector <br> $$A\in\mathbb{R}^{1\times n}$$ |
+|:-----:|:-----------------------------------------------------:|:--------------------------------------------------------------:|:-------------------------------------------:|
+|Entry size <br> of $$Av$$ | $$\Theta(\sqrt{n})$$ | $$\Theta(n)$$ | $$\Theta(n)$$ |
 
 ## Desiderata of Parametrization
 1. Every (pre)activation vector in a network should have $$\Theta(1)$$-sized coordinates;
 2. Neural network output should be $$\mathcal{O}(1)$$;
 3. All parameters should be updated as much as possible (in terms of scaling in width) without leading to divergence
 
+**Reference**
+- Greg Yang, Edward J. Hu, Igor Babuschkin, Szymon Sidor, Xiaodong Liu, David Farhi, Nick Ryder, Jakub Pachocki, Weizhu Chen, Jianfeng Gao. Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer. https://arxiv.org/abs/2203.03466.

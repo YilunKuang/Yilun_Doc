@@ -3,7 +3,7 @@ layout: default
 
 title: CUDA
 
-parent: Coding
+parent: System
 ---
 # CUDA
 

@@ -12,6 +12,7 @@ permalink: docs/Diffusion Models
 
 **Blogs**
 - [Yang Song - Generative Modeling by Estimating Gradients of the Data Distribution](https://yang-song.net/blog/2021/score/)
+- [Diffusion Meets Flow Matching: Two Sides of the Same Coin](https://diffusionflow.github.io/)
 
 **Papers**
 - DDPM

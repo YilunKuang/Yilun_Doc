@@ -3,7 +3,7 @@ layout: default
 
 title: Slurm
 
-parent: Coding
+parent: System
 ---
 # Slurm
 

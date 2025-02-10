@@ -9,7 +9,7 @@ aux_links:
 
 math: mathjax
 
-# Add custom CSS
-assets:
-  css:
-    - "assets/css/color.css"
+# # Add custom CSS
+# assets:
+#   css:
+#     - "assets/css/color.css"

@@ -24,7 +24,7 @@ $$
 \mathbf{y}_{i} = \frac{\mathbf{x}_{i}}{\text{RMS}(\mathbf{x})}*\gamma_{i}
 $$
 
-where $$\text{RMS}(\mathbf{x})=\sqrt{\epsilon+\frac{1}{n}\sum_{i=1}^{n}\mathbf{x}_i^2}$$. [2] hypothesizes that re-centering is not needed and show empirically that RMSNorm achieves similar or better performance with less wall time compared to LayerNorm. 
+where $$\text{RMS}(\mathbf{x})=\sqrt{\epsilon+\frac{1}{n}\sum_{i=1}^{n}\mathbf{x}_i^2}$$. If the mean is zero, RMSNorm actually recovers LayerNorm. [2] hypothesizes that re-centering is not needed and show empirically that RMSNorm achieves similar or better performance with less wall time compared to LayerNorm. 
 
 ## Pre-Normalization vs. Post-Normalization
 

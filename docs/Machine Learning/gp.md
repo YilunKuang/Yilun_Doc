@@ -21,6 +21,7 @@ Consider the Bayesian linear regression model $$f(\mathbf{x})=\phi(\mathbf{x})^\
 $$
 m(\mathbf{x})=\mathbb{E}[f(\mathbf{x})]=\phi(\mathbf{x})^\top\mathbb{E}[\mathbf{w}]=0\\
 $$
+
 $$
 k(\mathbf{x},\mathbf{x'})=\mathbb{E}[(f(\mathbf{x})-m(\mathbf{x}))(f(\mathbf{x'})-m(\mathbf{x}'))]\\
 =\mathbb{E}[f(\mathbf{x})f(\mathbf{x'})]=\phi(\mathbf{x})^\top\Sigma_p\phi(\mathbf{x}')

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: NSA
-parent: Misc
+parent: System
 ---
 # NSA
 
